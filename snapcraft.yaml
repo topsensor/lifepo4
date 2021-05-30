@@ -1,0 +1,43 @@
+name: lifepo4
+base: core18
+version: '1.0'
+summary: LifePO4wered
+
+description: |
+  Use this snap to power supply WDT reboot rpi 
+  
+grade: devel
+confinement: devmode
+
+parts:      
+   lifepo4wered-cli:
+    source:  https://github.com/xorbit/LiFePO4wered-Pi.git
+    source-type: git
+    plugin: make
+    make-parameters:
+       - all
+       - USE_SYSTEMD=0
+    build-packages:
+       - libsystemd-dev
+
+architectures:
+  - build-on: armhf
+    run-on: armhf
+  - build-on: arm64
+    run-on: arm64
+    
+apps:
+  init:
+      daemon: notify
+      command: lifepo4wered-daemon
+      plugs:
+         - shutdown
+         - i2c
+         - daemon-notify
+         
+         
+  lifepo4wered-cli:
+       command: lifepo4wered-cli
+       plugs:
+         - shutdown
+         - i2c
