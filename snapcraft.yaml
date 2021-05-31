@@ -10,7 +10,7 @@ grade: devel
 confinement: devmode
 
 parts:      
-   lifepo4wered-cli:
+   lifepo4:
     source:  https://github.com/xorbit/LiFePO4wered-Pi.git
     source-type: git
     plugin: make
@@ -36,7 +36,7 @@ apps:
          - daemon-notify
          
          
-  lifepo4wered-cli:
+  lifepo4:
        command: lifepo4wered-cli
        plugs:
          - shutdown
