@@ -31,7 +31,7 @@ layout:
 apps:
   init:
       daemon: notify
-      command: $SNAP/usr/local/lifepo4wered-daemon
+      command: $SNAP/usr/local/sbin/lifepo4wered-daemon
       plugs:
          - shutdown
          - i2c
