@@ -27,7 +27,7 @@ architectures:
     run-on: arm64
 layout:
   /usr/local/sbin:
-     symlink: $SNAP/usr/local/sbin
+     bind: $SNAP/usr/local/sbin
 apps:
   init:
       daemon: notify
