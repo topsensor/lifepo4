@@ -9,6 +9,10 @@ description: |
 grade: devel
 confinement: devmode
 
+layout:
+  /usr/local:
+    bind: $SNAP/usr/local
+
 parts:      
    lifepo4:
     source:  .
