@@ -35,7 +35,7 @@ architectures:
 
 apps:
   init:
-      daemon: notify
+      daemon: simple
       command: lifepo4wered-daemon start
       plugs:
          - shutdown
