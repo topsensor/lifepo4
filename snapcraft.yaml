@@ -1,6 +1,6 @@
 name: lifepo4
 base: core18
-version: '1.0'
+version: '1.1'
 summary: LifePO4wered
 
 description: |
