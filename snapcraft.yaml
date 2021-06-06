@@ -23,6 +23,8 @@ parts:
        - USE_SYSTEMD=0
     build-packages:
        - libsystemd-dev
+    prime:
+       - /lib/lsb/init-functions
 
 architectures:
   - build-on: armhf
