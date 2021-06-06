@@ -1,4 +1,4 @@
-PREFIX ?= $SNAP/usr/local
+PREFIX ?= /usr/local
 CC ?= gcc
 LD ?= ld
 CFLAGS ?= -std=c99 -Wall -O2
