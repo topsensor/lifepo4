@@ -11,7 +11,7 @@ confinement: devmode
 
 parts:      
    lifepo4:
-    source:  https://github.com/xorbit/LiFePO4wered-Pi.git
+    source:  .
     source-type: git
     plugin: make
     make-parameters:
@@ -25,9 +25,7 @@ architectures:
     run-on: armhf
   - build-on: arm64
     run-on: arm64
-layout:
-  /usr/local/sbin:
-     bind: $SNAP/usr/local/sbin
+
 apps:
   init:
       daemon: notify
