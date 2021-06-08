@@ -35,8 +35,8 @@ architectures:
 
 apps:
   init:
-      daemon: oneshot
-      command: /usr/bin/snap/lifepo4wered-daemon start
+      daemon: simple
+      command: lifepo4wered-daemon start
       plugs:
          - shutdown
          - i2c
