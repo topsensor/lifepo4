@@ -35,7 +35,7 @@ architectures:
 
 apps:
   init:
-      daemon: simple
+      daemon: oneshot
       command: lifepo4wered-daemon start
       plugs:
          - shutdown
