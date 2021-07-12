@@ -73,9 +73,13 @@ void shut_down(void) {
     "\"$BALENA_SUPERVISOR_ADDRESS/v1/shutdown?" \
     "apikey=$BALENA_SUPERVISOR_API_KEY\"", NULL};
   execv("/bin/sh", params);
-#else
-  char *params[3] = {"init", "0", NULL};
+#else //shutdown pi the iotcore way
+  execv('sudo dbus-send --system --print-reply \   
+--dest=org.freedesktop.login1 /org/freedesktop/login1 \
+"org.freedesktop.login1.Manager.Reboot" boolean:true');
+/*  char *params[3] = {"init", "0", NULL};
   execv("/sbin/init", params);
+  */
 #endif
 }
 
