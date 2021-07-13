@@ -36,7 +36,7 @@ architectures:
 apps:
   init:
       daemon: simple
-      command: sudo lifepo4wered-daemon start
+      command: $SNAP/lifepo4wered-daemon start
       plugs:
          - shutdown
          - i2c
@@ -44,7 +44,7 @@ apps:
          
          
   lifepo4:
-       command: sudo lifepo4wered-cli
+       command: $SNAP/lifepo4wered-cli
        plugs:
          - shutdown
          - i2c
