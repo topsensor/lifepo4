@@ -7,7 +7,7 @@ description: |
   Use this snap to power supply WDT reboot rpi 
   
 grade: devel
-confinement: devmode
+confinement: strict
 
 layout:
   /usr/local:
